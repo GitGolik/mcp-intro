@@ -120,9 +120,23 @@ Ne commit jamais le fichier `.env`, car il peut contenir des informations privé
 
 ## Utilisation
 
-Le serveur et le client seront implémentés dans les prochaines étapes du projet.
+### Lancer le serveur MCP
 
-Une fois le serveur disponible, il pourra être lancé depuis le dossier du projet. Le client permettra ensuite de se connecter au serveur, de consulter les tools et les resources, puis de récupérer des informations sur les notions de programmation.
+Depuis la racine du projet, active d’abord l’environnement virtuel :
+
+```bash
+source .venv/bin/activate
+```
+
+Puis lance le serveur :
+
+```bash
+python -m server.learning_server
+```
+
+Le serveur utilise le nom `Programming Learning Server`.
+
+À ce stade, il ne contient pas encore de tools ni de resources. Son objectif est de démarrer correctement avant d’ajouter des fonctionnalités.
 
 ## Tests
 
