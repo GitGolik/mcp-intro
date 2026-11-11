@@ -1,1 +1,111 @@
-[]
+[
+  {
+    "id": "python-functions",
+    "title": "Python Functions",
+    "summary": "Learn how to define and use functions in Python to organize reusable code.",
+    "prerequisites": [
+      "Python variables",
+      "Basic Python syntax"
+    ],
+    "key_concepts": [
+      "Function definition",
+      "Parameters and arguments",
+      "Return values",
+      "Default parameters"
+    ],
+    "common_mistakes": [
+      "Forgetting the return statement",
+      "Confusing parameters and arguments",
+      "Using a function before defining it"
+    ],
+    "practice_idea": "Write a function that takes two numbers and returns their sum."
+  },
+  {
+    "id": "python-lists",
+    "title": "Python Lists",
+    "summary": "Learn how to store and manipulate ordered collections of values using lists.",
+    "prerequisites": [
+      "Python variables",
+      "Python functions"
+    ],
+    "key_concepts": [
+      "Creating lists",
+      "Indexing",
+      "Slicing",
+      "Adding and removing elements",
+      "Iterating over a list"
+    ],
+    "common_mistakes": [
+      "Using an index outside the list range",
+      "Modifying a list while iterating over it",
+      "Confusing append and extend"
+    ],
+    "practice_idea": "Create a list of numbers and write a function that returns only the even numbers."
+  },
+  {
+    "id": "python-dictionaries",
+    "title": "Python Dictionaries",
+    "summary": "Learn how to store data as key-value pairs using Python dictionaries.",
+    "prerequisites": [
+      "Python variables",
+      "Python lists"
+    ],
+    "key_concepts": [
+      "Creating dictionaries",
+      "Accessing values by key",
+      "Adding and updating entries",
+      "Iterating over keys and values"
+    ],
+    "common_mistakes": [
+      "Using a key that does not exist",
+      "Confusing keys and values",
+      "Trying to access a dictionary value with an index"
+    ],
+    "practice_idea": "Create a dictionary that stores the names and ages of three people, then display each person."
+  },
+  {
+    "id": "python-decorators",
+    "title": "Python Decorators",
+    "summary": "Learn how decorators modify or extend the behavior of functions without changing their code.",
+    "prerequisites": [
+      "Python functions",
+      "Function arguments",
+      "Scope"
+    ],
+    "key_concepts": [
+      "Higher-order functions",
+      "Wrapper functions",
+      "The @decorator syntax",
+      "Functions as arguments"
+    ],
+    "common_mistakes": [
+      "Forgetting to return the wrapper function",
+      "Forgetting to call the original function inside the wrapper",
+      "Using a decorator before understanding nested functions"
+    ],
+    "practice_idea": "Create a decorator that prints a message before and after a function call."
+  },
+  {
+    "id": "c-pointers",
+    "title": "C Pointers",
+    "summary": "Learn how pointers store memory addresses and how they are used to access and modify data in C.",
+    "prerequisites": [
+      "C variables",
+      "C functions",
+      "C arrays"
+    ],
+    "key_concepts": [
+      "Memory addresses",
+      "Pointer declaration",
+      "Dereferencing with *",
+      "Address-of operator &",
+      "NULL pointers"
+    ],
+    "common_mistakes": [
+      "Dereferencing an uninitialized pointer",
+      "Confusing a pointer with the value it points to",
+      "Forgetting to initialize a pointer before using it"
+    ],
+    "practice_idea": "Write a C function that swaps the values of two integers using pointers."
+  }
+]
