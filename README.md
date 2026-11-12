@@ -171,3 +171,39 @@ Avant d’utiliser un serveur MCP développé par un tiers, il faut vérifier :
 - Si les dépendances sont maintenues et à jour.
 
 Un serveur MCP ne doit recevoir que les permissions strictement nécessaires à son fonctionnement.
+
+## MCP Tools
+
+### `search_topics`
+
+Recherche des notions de programmation dans le fichier local `data/topics.json`.
+
+La recherche porte sur :
+
+- Le titre du thème.
+- Le résumé.
+- Les prérequis.
+- Les concepts clés.
+
+Le tool retourne une liste de thèmes correspondants. Si aucun thème ne correspond, il retourne une liste vide.
+
+Exemple d’appel :
+
+```json
+{
+  "query": "decorators"
+}
+```
+### `get_topic_details`
+
+Retourne les informations complètes d’un thème à partir de son identifiant unique.
+
+Le tool attend un `topic_id`, par exemple :
+
+```text
+python-decorators
+```
+
+Si l’identifiant existe, il retourne toutes les informations du thème : titre, résumé, prérequis, concepts clés, erreurs fréquentes et idée d’exercice.
+
+Si l’identifiant n’existe pas, il retourne un message d’erreur clair au lieu de provoquer une erreur Python.
