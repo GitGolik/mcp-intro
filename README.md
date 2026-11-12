@@ -220,3 +220,85 @@ Elle contient uniquement :
 - Le titre de chaque thème (`title`).
 
 Elle ne retourne pas les prérequis, les concepts détaillés, les erreurs fréquentes ou les exercices. Pour obtenir ces informations, utiliser le tool `get_topic_details`.
+
+
+## Testing
+
+Le serveur a été testé avec MCP Inspector.
+
+### Tests réalisés
+
+- Le serveur démarre avec `python3 -m server.learning_server`.
+- Les tools `search_topics` et `get_topic_details` sont visibles dans MCP Inspector.
+- `search_topics("decorators")` retourne le thème `Python Decorators`.
+- `get_topic_details("python-decorators")` retourne les informations complètes du thème.
+- Une recherche sans correspondance retourne une liste vide.
+- Un identifiant inconnu retourne un message d’erreur clair.
+- La resource `topics://catalog` retourne les identifiants et titres des thèmes disponibles.
+
+### Exemple de résultat
+
+Appel de `search_topics` avec la requête `decorators` :
+
+```json
+[
+  {
+    "id": "python-decorators",
+    "title": "Python Decorators",
+    "summary": "Learn how decorators modify or extend the behavior of functions without changing their code.",
+    "key_concepts": [
+      "Higher-order functions",
+      "Wrapper functions",
+      "The @decorator syntax",
+      "Functions as arguments"
+    ]
+  }
+]
+```
+
+Appel de `get_topic_details` avec un identifiant inconnu :
+
+```json
+{
+  "error": "Topic not found.",
+  "message": "No topic found with id 'unknown-topic'."
+}
+```
+## Agent
+
+Le fichier `client/agent.py` implémente un agent-like client simple.
+
+Il reçoit une question d’étudiant, se connecte au serveur MCP via le transport stdio,
+appelle `search_topics` puis `get_topic_details`, et génère une réponse à partir
+des données retournées par le serveur.
+
+### Lancer l’agent
+
+```bash
+source .venv/bin/activate
+python3 -m client.agent
+```
+
+L’agent utilise la question suivante :
+
+```text
+I want to study Python decorators. What should I review first?
+```
+
+Il enregistre ensuite une réponse d’exemple dans :
+
+```text
+output/sample_agent_response.md
+```
+
+### Fonctionnement
+
+1. L’agent reçoit la question.
+2. Il appelle `search_topics` via MCP.
+3. Il sélectionne le premier thème correspondant.
+4. Il appelle `get_topic_details` via MCP.
+5. Il formate une réponse pour l’étudiant.
+6. Il enregistre la réponse dans `output/sample_agent_response.md`.
+
+L’agent n’importe pas directement les fonctions du serveur. Toutes les informations
+sur les thèmes sont obtenues à travers MCP.
