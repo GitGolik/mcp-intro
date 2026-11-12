@@ -207,3 +207,16 @@ python-decorators
 Si l’identifiant existe, il retourne toutes les informations du thème : titre, résumé, prérequis, concepts clés, erreurs fréquentes et idée d’exercice.
 
 Si l’identifiant n’existe pas, il retourne un message d’erreur clair au lieu de provoquer une erreur Python.
+
+## MCP Resources
+
+### `topics://catalog`
+
+Resource en lecture seule qui retourne le catalogue des thèmes disponibles.
+
+Elle contient uniquement :
+
+- L’identifiant de chaque thème (`id`).
+- Le titre de chaque thème (`title`).
+
+Elle ne retourne pas les prérequis, les concepts détaillés, les erreurs fréquentes ou les exercices. Pour obtenir ces informations, utiliser le tool `get_topic_details`.
